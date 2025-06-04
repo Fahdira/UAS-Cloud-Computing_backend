@@ -4,7 +4,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "docker:deploy": "docker build -t fahdira/backend-uas . && docker push fahdira/backend-uas"
   },
   "dependencies": {
     "aws-sdk": "^2.1372.0",
