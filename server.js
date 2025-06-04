@@ -11,7 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
 
-app.get('/health', (req, res) => {
+app.get('/', (req, res) => {
   res.send('ok');
 });
 
