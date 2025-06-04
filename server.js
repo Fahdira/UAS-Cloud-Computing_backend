@@ -15,6 +15,10 @@ app.get('/test', (req, res) => {
   res.send('ok');
 });
 
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from backend!' });
+});
+
 app.post('/upload', upload.single('file'), async (req, res) => {
   try {
     const result = await uploadToS3(req.file);
