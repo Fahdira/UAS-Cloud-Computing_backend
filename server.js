@@ -7,9 +7,12 @@ import { connectDB } from './db.js';
 dotenv.config();
 
 const app = express();
+const cors = require('cors');
 const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
+
+app.use(cors());
 
 app.get('/test', (req, res) => {
   res.send('ok');
