@@ -11,7 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('ok');
 });
 
