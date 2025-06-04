@@ -1,13 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import multer from 'multer';
+import cors from 'cors';
 import { uploadToS3 } from './s3.js';
 import { connectDB } from './db.js';
 
 dotenv.config();
 
 const app = express();
-const cors = require('cors');
 const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
