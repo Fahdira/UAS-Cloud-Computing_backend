@@ -11,12 +11,12 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('ok');
 });
 
 app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from backend!' });
+  res.json({ message: 'Hello from backend!!' });
 });
 
 app.post('/upload', upload.single('file'), async (req, res) => {
