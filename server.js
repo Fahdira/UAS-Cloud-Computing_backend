@@ -11,11 +11,11 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
 
-app.get('/test', (req, res) => {
+app.get('/', (req, res) => {
   res.send('ok');
 });
 
-app.get('/api/hello', (req, res) => {
+app.get('/api', (req, res) => {
   res.json({ message: 'Hello from backend!' });
 });
 
