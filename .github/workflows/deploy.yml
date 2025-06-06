@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to EC2 backend
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ec2-user@47.130.132.63 << 'EOF'
             sudo docker pull fahdira/backend-uas
             sudo docker stop backend || true && sudo docker rm backend || true
             sudo docker run -d --name backend -p 8080:8080 --env-file /home/ec2-user/.env fahdira/backend-uas
