@@ -69,7 +69,7 @@
                                             @php
                                                 $about = App\Models\About::first();
                                             @endphp
-                                            <img class="logo-dark2" src="/uploads/{{ $about->logo }}" alt="logo">
+                                            <img class="logo-dark2" src="" alt="logo">
                                         </a>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@
                                         @endphp
 
                                         <li class="dropdown">
-                                            <a href="#">Shop</a>
+                                            <a href="/products/1">Shop</a>
                                             <i class="fa fa-angle-down dropdown-trigger"></i>
                                             <ul class="dropdown-menu megamenu-wide">
                                                 <li>

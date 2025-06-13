@@ -150,10 +150,14 @@ class HomeController extends Controller
 
     public function checkout_orders(Request $request)
     {
+
+        $grand_total = array_sum($request->total);
+
+
         $id = DB::table('orders')->insertGetId([
             'id_member' => $request->id_member,
             'invoice' => date('ymds'),
-            'grand_total' => $request->grand_total,
+            'grand_total' => $grand_total,
             'status' => 'Baru',
             'created_at' => date('Y-m-d H:i:s')
         ]);
@@ -175,8 +179,8 @@ class HomeController extends Controller
         ]);
     }
 
-    
-    
+
+
     public function checkout()
     {
         $about = About::first();
@@ -235,7 +239,7 @@ class HomeController extends Controller
 
         return redirect('/orders');
     }
-    
+
     public function orders()
     {
         $orders = Order::where('id_member', Auth::guard('webmember')->user()->id)->get();

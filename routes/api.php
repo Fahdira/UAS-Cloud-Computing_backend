@@ -25,14 +25,14 @@ Route::group([
     Route::post('admin',[AuthController::class, 'login']);
     Route::post('register',[AuthController::class, 'register']);
     Route::post('logout',[AuthController::class, 'logout']);
-    
+
 
 });
 
 Route::group(['middleware' => 'api'], function () {
     // Menggunakan Route::resource dengan nama resource 'categories' dan controller CategoryController
     Route::resource('categories', CategoryController::class);
-    
+
     // Menggunakan Route::resource dengan nama resource 'subcategories' dan controller SubcategoryController
     Route::resource('subcategories', SubcategoryController::class);
 
@@ -51,7 +51,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('pesanan/diterima', [OrderController::class, 'diterima']);
     Route::get('pesanan/selesai', [OrderController::class, 'selesai']);
     Route::post('pesanan/ubah_status/{order}', [OrderController::class, 'ubah_status']);
-    
+
     Route::get('report', [ReportController::class, 'get_report']);
 });
 
@@ -59,5 +59,5 @@ Route::group(['middleware' => 'api'], function () {
 
 Route::group(['middleware' => 'auth:api'], function () {
     // Rute yang memerlukan otentikasi
-    Route::get('/protected-route', [AuthControllerController::class, 'protectedMethod']);
+    Route::get('/protected-route', [AuthController::class, 'protectedMethod']);
 });

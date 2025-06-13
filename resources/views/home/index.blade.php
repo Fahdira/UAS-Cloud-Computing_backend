@@ -5,7 +5,7 @@
     <section class="hero-wrap text-center relative">
         <div id="owl-hero" class="owl-carousel owl-theme light-arrows slider-animated">
             @foreach ($slider as $slider)
-                
+
             <div class="hero-slide overlay" style="background-image:url(/uploads/{{ $slider->gambar }})">
                 <div class="container">
                     <div class="hero-holder">
@@ -25,9 +25,9 @@
         <div class="container">
             <div class="row">
                 @foreach ($categories as $category)
-                    
+
                 <div class="col-xs-4 col-xxs-12 mb-30 promo-banner">
-                    <a href="/product/{id}">
+                    <a href="/product/7">
                         <img src="/uploads/{{ $category->gambar }}" alt="">
                         <div class="overlay"></div>
                         <div class="promo-inner valign">
@@ -58,7 +58,7 @@
 
             <div class="row items-grid">
                 @foreach ($product as $product)
-                    
+
                 <div class="col-md-3 col-xs-6">
                     <div class="product-item hover-trigger">
                         <div class="product-img">
@@ -94,16 +94,16 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div> <!-- end row -->
         </div>
     </section> <!-- end trendy products -->
-    
+
     <!-- Testimonials -->
     <section class="section-wrap relative testimonials bg-parallax overlay"
     style="background-image:url(front/img/testimonials/testimonial_bg.jpg);">
     <div class="container relative">
-        
+
             <div class="row heading-row mb-20">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <h2 class="heading white bottom-line">Happy Clients</h2>
@@ -112,13 +112,13 @@
 
             <div id="owl-testimonials" class="owl-carousel owl-theme text-center">
                 @foreach ($testimoni as $testimoni)
-                    
+
                 <div class="item">
                     <div class="testimonial">
                         <p class="testimonial-text">{{ $testimoni->deskripsi }}</p>
                             <span>{{ $testimoni->nama_testimoni }} </span>
                         </div>
-                        
+
                     </div>
                     @endforeach
             </div>

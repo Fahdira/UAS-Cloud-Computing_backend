@@ -65,7 +65,7 @@ Route::post('/tentang/{about}', [TentangController::class, 'update']);
 Route::get('/dashboard',[DashboardController::class, 'index']);
 
 
-//home page atau landing page 
+//home page atau landing page
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/products/{category}', [HomeController::class, 'products']);
 Route::get('/product/{id}', [HomeController::class, 'product']);
