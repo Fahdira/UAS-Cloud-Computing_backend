@@ -1,12 +1,29 @@
-FROM node:18-alpine
+FROM php:8.2-fpm
 
-WORKDIR /app
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim unzip git curl nginx \
+    libzip-dev \
+    mariadb-client \
+    && docker-php-ext-install pdo pdo_mysql zip
 
-COPY package*.json ./
-RUN npm install
+# Set working directory
+WORKDIR /var/www
 
-COPY . .
+# Copy app
+COPY . /var/www
 
-EXPOSE 8080
+# Permissions
+RUN chown -R www-data:www-data /var/www
 
-CMD ["npm", "start"]
+# Expose port
+EXPOSE 9000
+
+CMD ["php-fpm"]
